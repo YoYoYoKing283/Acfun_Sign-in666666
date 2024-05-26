@@ -1,0 +1,15 @@
+name: 'acfungogogo'
+on:
+  schedule:
+    - cron: "30 22 * * *" # 北京时间上午06:30
+  workflow_dispatch:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ServerChan · Server酱通知
+        uses: easychen/github-action-server-chan@v1.0.0
+        with:
+          sendkey: ${{ secrets.sendkey }}
+          title: "ACFun签到通知，运行成功😝"
